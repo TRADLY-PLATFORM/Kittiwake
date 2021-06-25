@@ -175,8 +175,7 @@ class LoginPage extends StatelessWidget {
                             )),
                         Padding(
                           padding: EdgeInsets.only(top: 45.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                          child: Wrap(
                             children: [
                               Text('Don\'t have an account?',
                                   style:
