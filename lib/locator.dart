@@ -1,13 +1,13 @@
 import 'package:get_it/get_it.dart';
 import 'package:tradly_grocery_app/data/model/login_response.dart';
-import 'package:tradly_grocery_app/data/repo/repository.dart';
+import 'package:tradly_grocery_app/domain/repo/repository.dart';
 import 'package:tradly_grocery_app/data/source/cache/cache.dart';
 import 'package:tradly_grocery_app/data/source/cache/cache_impl.dart';
 import 'package:tradly_grocery_app/data/source/remote/web_service.dart';
 import 'package:tradly_grocery_app/data/source/remote/web_service_impl.dart';
 import 'package:tradly_grocery_app/data/store/data_store.dart';
 import 'package:tradly_grocery_app/data/store/data_store_impl.dart';
-import 'package:tradly_grocery_app/domain/repo/repository_impl.dart';
+import 'package:tradly_grocery_app/data/repo/repository_impl.dart';
 import 'package:tradly_grocery_app/domain/usecase/login_use_case.dart';
 import 'package:tradly_grocery_app/domain/usecase/login_use_case_impl.dart';
 import 'package:tradly_grocery_app/presentation/ui/home/home_view_model.dart';

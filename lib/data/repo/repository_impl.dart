@@ -1,4 +1,4 @@
-import 'package:tradly_grocery_app/data/repo/repository.dart';
+import 'package:tradly_grocery_app/domain/repo/repository.dart';
 import 'package:tradly_grocery_app/data/store/data_store.dart';
 
 class RepositoryImpl implements Repository{

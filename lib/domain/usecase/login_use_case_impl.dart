@@ -1,4 +1,4 @@
-import 'package:tradly_grocery_app/data/repo/repository.dart';
+import 'package:tradly_grocery_app/domain/repo/repository.dart';
 import 'package:tradly_grocery_app/domain/model/response.dart';
 import 'package:tradly_grocery_app/domain/usecase/login_use_case.dart';
 
