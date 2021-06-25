@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:tradly_grocery_app/data/model/login_request.dart';
 import 'package:tradly_grocery_app/data/source/remote/method.dart';
 import 'package:tradly_grocery_app/data/source/remote/web_service.dart';
@@ -8,7 +10,7 @@ import 'package:tradly_grocery_app/presentation/widget/url_path.dart';
 class WebServiceImpl extends WebServiceHelper implements WebService{
 
   @override
-  String get getBaseUrl => 'https://api.sandbox.tradly.app';
+  String get getBaseUrl => Platform.environment['host_name'];
 
   @override
   Future<dynamic> login(LoginRequest loginRequest){
