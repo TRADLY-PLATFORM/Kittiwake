@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tradly_grocery_app/presentation/ui/browse/browse_page.dart';
 import 'package:tradly_grocery_app/presentation/ui/home/home_page.dart';
 import 'package:tradly_grocery_app/presentation/ui/main/main_view_model.dart';
 import 'package:tradly_grocery_app/presentation/ui/main/navigation.dart';
+import 'package:tradly_grocery_app/presentation/ui/orderhistory/order_history_page.dart';
+import 'package:tradly_grocery_app/presentation/ui/profile/profile_page.dart';
+import 'package:tradly_grocery_app/presentation/ui/store/store_page.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_colors.dart';
 import 'package:tradly_grocery_app/presentation/view_model/base_view.dart';
 
@@ -50,13 +54,13 @@ class MainPage extends StatelessWidget {
       case Navigation.HOME:
         return HomePage();
       case Navigation.BROWSE:
-        return HomePage();
+        return BrowsePage();
       case Navigation.STORE:
-        return HomePage();
+        return StorePage();
       case Navigation.ORDER_HISTORY:
-        return HomePage();
+        return OrderHistoryPage();
       case Navigation.PROFILE:
-        return HomePage();
+        return ProfilePage();
     }
   }
 }
