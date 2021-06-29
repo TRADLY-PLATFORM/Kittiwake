@@ -11,7 +11,7 @@ import 'package:tradly_grocery_app/presentation/view_model/base_view.dart';
 class OnboardingPage extends StatelessWidget {
   static const ROUTE_NAME = '/';
 
-  final PageController _controller = new PageController();
+  final PageController _controller = new PageController(initialPage: 0);
   final GlobalKey _pageViewKey = GlobalKey();
 
   @override

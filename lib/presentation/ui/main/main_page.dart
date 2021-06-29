@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_grocery_app/presentation/ui/home/home_page.dart';
 import 'package:tradly_grocery_app/presentation/ui/main/main_view_model.dart';
+import 'package:tradly_grocery_app/presentation/ui/main/navigation.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_colors.dart';
 import 'package:tradly_grocery_app/presentation/view_model/base_view.dart';
 
@@ -21,16 +22,19 @@ class MainPage extends StatelessWidget {
     return BaseView<MainViewModel>(
         builder: (buildContext, model, widget) =>
             Scaffold(
-              body: HomePage(),
+              body: _getbody(model.currentNavigationIndex),
               bottomNavigationBar: BottomNavigationBar(
                 showUnselectedLabels: true,
                 backgroundColor: Colors.white,
                 selectedItemColor: AppColors.PURE_BLACK,
                 unselectedItemColor: Colors.grey,
                 selectedFontSize: 12.0,
-                currentIndex: 0,
+                currentIndex: model.currentNavigationIndex,
                 elevation: 4.0,
                 type: BottomNavigationBarType.fixed,
+                onTap: (index){
+                  model.currentNavigationIndex = index;
+                },
                 items: this.navigationItems.entries.map((pair) =>
                     BottomNavigationBarItem(
                         icon: Padding(
@@ -39,5 +43,20 @@ class MainPage extends StatelessWidget {
                         ), label: pair.key)).toList(),
               ),
             ));
+  }
+
+  Widget _getbody(int index){
+    switch(Navigation.values[index]){
+      case Navigation.HOME:
+        return HomePage();
+      case Navigation.BROWSE:
+        return HomePage();
+      case Navigation.STORE:
+        return HomePage();
+      case Navigation.ORDER_HISTORY:
+        return HomePage();
+      case Navigation.PROFILE:
+        return HomePage();
+    }
   }
 }

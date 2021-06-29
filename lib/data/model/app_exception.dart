@@ -4,8 +4,8 @@ import 'package:tradly_grocery_app/data/utils/app_log_helper.dart';
 final log = getLogger('API');
 
 class AppException implements Exception {
-  final _message;
-  final _prefix;
+  final String? _message;
+  final String? _prefix;
 
   AppException([this._message, this._prefix]);
 
@@ -21,12 +21,14 @@ class FetchDataException extends AppException {
 
 class TradlyException extends AppException{
 
-  TradlyException(BaseErrorResponse baseErrorResponse):
-        super('Error Code: ${baseErrorResponse.errorResponse.code}',
-          '\nMessage: ${baseErrorResponse.errorResponse.message}');
+  final BaseErrorResponse _baseErrorResponse;
+
+  TradlyException(this._baseErrorResponse);
 
   String toString() {
-    log.i(super.toString());
-    return super.toString();
+    final error = this._baseErrorResponse.errorResponse;
+    final formattedError = "Error Code: ${error.code} \nMessage: ${error.message}";
+    log.i(formattedError);
+    return formattedError;
   }
 }

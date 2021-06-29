@@ -5,8 +5,6 @@ class OnBoardingViewModel extends BaseViewModel{
 
   int _currentPageIndex = 0;
 
-  OnBoardingViewModel();
-
   String get buttonLabel => this._currentPageIndex == 2 ? 'Finish': 'Next';
 
   set currentIndex(int index) {

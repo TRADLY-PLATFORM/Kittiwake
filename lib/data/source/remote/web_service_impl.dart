@@ -14,8 +14,7 @@ class WebServiceImpl extends WebServiceHelper implements WebService{
 
   @override
   Future<dynamic> login(LoginRequest loginRequest){
-    Map<String,String> headers = {DataConstants.AUTHORIZATION_KEY: DataConstants.AUTHORIZATION_VALUE};
-    return call(path: URLPath.LOGIN, method: Method.POST,headers: headers, body: loginRequest);
+    return call(path: URLPath.LOGIN, method: Method.POST,body: loginRequest);
   }
 
 }

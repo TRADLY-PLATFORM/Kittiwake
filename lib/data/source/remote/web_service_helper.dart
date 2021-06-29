@@ -7,6 +7,7 @@ import 'package:tradly_grocery_app/data/model/base_error_response.dart';
 import 'package:tradly_grocery_app/data/model/map_request.dart';
 import 'package:tradly_grocery_app/data/source/remote/method.dart';
 import 'package:tradly_grocery_app/data/utils/app_log_helper.dart';
+import 'package:tradly_grocery_app/data/utils/data_constants.dart';
 
 
 abstract class WebServiceHelper {
@@ -23,6 +24,7 @@ abstract class WebServiceHelper {
   Map<String, String> _headers = {
     HttpHeaders.acceptHeader: 'application/json',
     HttpHeaders.contentTypeHeader: 'application/json',
+    DataConstants.AUTHORIZATION_KEY: DataConstants.AUTHORIZATION_VALUE,
   };
 
   Future call(
