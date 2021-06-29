@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:tradly_grocery_app/domain/model/response.dart';
 import 'package:tradly_grocery_app/presentation/ui/login/view_model/login_view_model.dart';
 import 'package:tradly_grocery_app/presentation/ui/main/main_page.dart';
@@ -9,6 +8,7 @@ import 'package:tradly_grocery_app/presentation/utils/app_text_style.dart';
 import 'package:tradly_grocery_app/presentation/view_model/base_view.dart';
 import 'package:tradly_grocery_app/presentation/view_model/view_state.dart';
 import 'package:tradly_grocery_app/presentation/widget/app_circular_progress_indicator.dart';
+import 'package:tradly_grocery_app/presentation/widget/modal_progress_hud.dart';
 
 class LoginPage extends StatelessWidget {
   static const ROUTE_NAME = '/login';
@@ -38,13 +38,13 @@ class LoginPage extends StatelessWidget {
                     child: Column(
                       children: [
                         Text('Welcome to tradly',
-                            style: getStyleHeading(context).copyWith(color: Colors.white)),
+                            style: getStyleHeading(context)?.copyWith(color: Colors.white)),
                         Padding(
                             padding: EdgeInsets.only(top: 66.0),
                             child: Text(
                               'Login to your account',
                               style:
-                                  getStyleSubHeading(context).copyWith(color: Colors.white),
+                                  getStyleSubHeading(context)?.copyWith(color: Colors.white),
                             )),
                         Form(
                           key: this._formKey,
@@ -57,7 +57,7 @@ class LoginPage extends StatelessWidget {
                                 style: TextStyle(color: Colors.white),
                                 controller: this._usernameController,
                                 validator: (value) {
-                                  if (value.isEmpty) {
+                                  if (value!=null && value.isEmpty) {
                                     return 'Enter Email/Mobile Number';
                                   }
                                   return null;
@@ -100,7 +100,7 @@ class LoginPage extends StatelessWidget {
                                 style: TextStyle(color: Colors.white),
                                 controller: this._passwordController,
                                 validator: (value) {
-                                  if (value.isEmpty) {
+                                  if (value!=null && value.isEmpty) {
                                     return 'Enter password';
                                   }
                                   return null;
@@ -151,7 +151,7 @@ class LoginPage extends StatelessWidget {
                                 style: getStyleButtonText(context),
                               ),
                               onPressed: () async {
-                              if (this._formKey.currentState.validate()) {
+                              if (this._formKey.currentState!=null && this._formKey.currentState!.validate()) {
                                 FocusScope.of(context).unfocus();
                                 await model.login("", this._usernameController.text, this._passwordController.text);
                                 if (Status.FAILURE == model.response.status) {
@@ -171,7 +171,7 @@ class LoginPage extends StatelessWidget {
                             padding: EdgeInsets.only(top: 33.0),
                             child: Text(
                               'Forgot your password?',
-                              style: getStyleTitle(context).copyWith(color: Colors.white),
+                              style: getStyleTitle(context)?.copyWith(color: Colors.white),
                             )),
                         Padding(
                           padding: EdgeInsets.only(top: 45.0),
@@ -179,7 +179,7 @@ class LoginPage extends StatelessWidget {
                             children: [
                               Text('Don\'t have an account?',
                                   style:
-                                      getStyleTitle(context).copyWith(color: Colors.white)),
+                                      getStyleTitle(context)?.copyWith(color: Colors.white)),
                               InkWell(
                                 onTap: (){},
                                 borderRadius: BorderRadius.circular(4.0),
@@ -187,7 +187,7 @@ class LoginPage extends StatelessWidget {
                                   padding: EdgeInsets.symmetric(horizontal:4.0),
                                   child: Text('Sign up',
                                       style:
-                                      getStyleTitle(context).copyWith(color: Colors.white,fontWeight: FontWeight.bold)),
+                                      getStyleTitle(context)?.copyWith(color: Colors.white,fontWeight: FontWeight.bold)),
                                 ),
                               ),
                             ],
@@ -204,8 +204,8 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Widget _buildError(BuildContext context, Response response) {
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
+  Widget _buildError(BuildContext context, Response? response) {
+    WidgetsBinding.instance?.addPostFrameCallback((_) async {
       if (response != null && Status.FAILURE == response.status) {
         AppAlertDialog.showAlertDialog(
             context: context,
@@ -218,7 +218,7 @@ class LoginPage extends StatelessWidget {
     return SizedBox();
   }
 
-  bool _getResponseStatus(Response response) {
+  bool _getResponseStatus(Response? response) {
     return response != null && Status.SUCCESS == response.status;
   }
 

@@ -3,14 +3,14 @@ import 'package:tradly_grocery_app/data/model/key_response.dart';
 import 'package:tradly_grocery_app/data/model/meta_data_response.dart';
 
 class UserResponse implements BaseJson {
-  String _id;
-  String _firstName;
-  String _lastName;
-  String _email;
-  String _profilePic;
-  bool _emailVerified;
-  MetaDataResponse _metadata;
-  KeyResponse _key;
+  late String _id;
+  late String _firstName;
+  late String _lastName;
+  late String _email;
+  late String _profilePic;
+  late bool _emailVerified;
+  late MetaDataResponse _metadata;
+  late KeyResponse _key;
 
   String get id => this._id;
 
@@ -40,11 +40,7 @@ class UserResponse implements BaseJson {
     this._email = json['email'];
     this._profilePic = json['profile_pic'];
     this._emailVerified = json['email_verified'];
-    this._metadata = json['metadata'] != null
-        ? MetaDataResponse.fromJson(json['metadata'])
-        : null;
-    this._key = json['key'] != null
-        ? KeyResponse.fromJson(json['key'])
-        : null;
+    this._metadata = MetaDataResponse.fromJson(json['metadata']);
+    this._key = KeyResponse.fromJson(json['key']);
   }
 }

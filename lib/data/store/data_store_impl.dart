@@ -23,12 +23,17 @@ class DataStoreImpl implements DataStore{
     return this._webService.login(loginRequest).then((response) {
       final baseResponse = BaseResponse<LoginResponse>.fromJson(response);
       final user = baseResponse.data.userResponse;
-      final entity = UserEntity(id: user.id, firstName: user.firstName, lastName: user.lastName,
-          email: user.email, profilePic: user.profilePic, emailVerified: user.emailVerified,
-          stripeConnected: user.metadata.stripeConnected,
-          stripeConnectOnboarding: user.metadata.stripeConnectOnboarding,
-          authKey: user.key.authKey, refreshKey: user.key.refreshKey);
-      this._cache.setUserEntity(entity);
+        final entity = UserEntity(id: user.id,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            email: user.email,
+            profilePic: user.profilePic,
+            emailVerified: user.emailVerified,
+            stripeConnected: user.metadata.stripeConnected,
+            stripeConnectOnboarding: user.metadata.stripeConnectOnboarding,
+            authKey: user.key.authKey,
+            refreshKey: user.key.refreshKey);
+        this._cache.setUserEntity(entity);
       return baseResponse.status;
     });
   }

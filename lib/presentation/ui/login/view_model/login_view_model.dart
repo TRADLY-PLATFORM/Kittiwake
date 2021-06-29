@@ -7,7 +7,7 @@ class LoginViewModel extends BaseViewModel{
 
   final LoginUseCase _loginUseCase;
 
-  Response<bool> _response;
+  late Response<bool> _response;
 
   LoginViewModel(this._loginUseCase);
 

@@ -4,10 +4,10 @@ import 'package:tradly_grocery_app/presentation/utils/app_colors.dart';
 
 class AppBarSearchItem extends StatelessWidget implements PreferredSizeWidget {
 
-  final double _width;
-  final double _height;
+  late final double _width;
+  late final double _height;
 
-  AppBarSearchItem({@required double width, @required double height}):this._width = width,this._height = height;
+  AppBarSearchItem({required double width, required double height}):this._width = width,this._height = height;
 
   @override
   Widget build(BuildContext context) {

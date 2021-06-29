@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
             iconTheme: IconThemeData(color: Colors.white),
             title: Text(
               'Groceries',
-              style: getStyleTitle(context).copyWith(
+              style: getStyleTitle(context)?.copyWith(
                   color: Colors.white, fontWeight: AppFont.fontWeightBold),
             ),
             elevation: 4.0,

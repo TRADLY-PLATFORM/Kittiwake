@@ -73,8 +73,7 @@ class Onboarding extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(25.0))),
                               child: Text(
                                 'Next',
-                                style: getStyleButtonText(context)
-                                    .copyWith(color: Colors.white),
+                                style: getStyleButtonText(context)?.copyWith(color: Colors.white),
                               ),
                               onPressed: () => {},
                             ),

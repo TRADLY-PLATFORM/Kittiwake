@@ -2,8 +2,8 @@ import 'package:tradly_grocery_app/data/model/base_json.dart';
 
 class KeyResponse implements BaseJson {
 
-  String _authKey;
-  String _refreshKey;
+  late String _authKey;
+  late String _refreshKey;
 
   KeyResponse.fromJson(Map<String, dynamic> json){
     this.fromJson(json);

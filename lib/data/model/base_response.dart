@@ -4,8 +4,8 @@ import 'base_json.dart';
 
 class BaseResponse<T extends BaseJson> {
 
-  bool _status;
-  T _data;
+  late bool _status;
+  late T _data;
 
   bool get status => this._status;
 

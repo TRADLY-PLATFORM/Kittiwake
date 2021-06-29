@@ -2,8 +2,8 @@ import 'package:tradly_grocery_app/data/model/base_json.dart';
 
 class MetaDataResponse implements BaseJson{
 
-  bool _stripeConnected;
-  bool _stripeConnectOnboarding;
+  late bool _stripeConnected;
+  late bool _stripeConnectOnboarding;
 
   MetaDataResponse.fromJson(Map<String, dynamic> json){
     this.fromJson(json);

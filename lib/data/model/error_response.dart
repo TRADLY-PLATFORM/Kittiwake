@@ -2,8 +2,8 @@ import 'package:tradly_grocery_app/data/model/base_json.dart';
 
 class ErrorResponse implements BaseJson{
 
-  int _code;
-  String _message;
+  late int _code;
+  late String _message;
 
   ErrorResponse.fromJson(Map<String, dynamic> json){
     this.fromJson(json);

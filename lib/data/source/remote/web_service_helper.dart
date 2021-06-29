@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter/foundation.dart';
 import 'package:http/http.dart';
 import 'package:tradly_grocery_app/data/model/app_exception.dart';
 import 'package:tradly_grocery_app/data/model/base_error_response.dart';
@@ -27,13 +26,13 @@ abstract class WebServiceHelper {
   };
 
   Future call(
-      {@required String path,
-        Map<String, String> headers,
-        Encoding encoding,
-        @required Method method,
-          MapRequest body}) async {
+      {required String path,
+        Map<String, String>? headers,
+        Encoding? encoding,
+        required Method method,
+          MapRequest? body}) async {
     Response responseData;
-    final url = getBaseUrl + path;
+    final url = Uri.parse(getBaseUrl + path);
     log.i('$_tagRequest $url');
     if (headers == null) {
       headers = this._headers;
@@ -46,13 +45,29 @@ abstract class WebServiceHelper {
           responseData = await get(url, headers: headers);
           break;
         case Method.POST:
-          Map<String,dynamic> map = body.toMap();
-          responseData = await post(url,
-              body: json.encode(map), headers: headers, encoding: encoding);
+          Map<String,dynamic>? map = body?.toMap();
+          if(encoding == null) {
+            responseData = await post(url,
+                body: json.encode(map),
+                headers: headers);
+          }else{
+            responseData = await post(url,
+                body: json.encode(map),
+                headers: headers,
+                encoding: encoding);
+          }
           break;
         case Method.PUT:
-          responseData = await put(url,
-              body: json.encode(body.toMap()), headers: headers, encoding: encoding);
+          if(encoding == null) {
+            responseData = await put(url,
+                body: json.encode(body?.toMap()),
+                headers: headers);
+          }else{
+            responseData = await put(url,
+                body: json.encode(body?.toMap()),
+                headers: headers,
+                encoding: encoding);
+          }
           break;
         case Method.DELETE:
           responseData = await delete(url, headers: headers);

@@ -5,10 +5,10 @@ import 'package:tradly_grocery_app/presentation/utils/app_colors.dart';
 
 /// An indicator showing the currently selected page of a PageController
 class DotsIndicator extends AnimatedWidget {
-  DotsIndicator({
+  DotsIndicator({required
     this.controller,
-    this.itemCount,
-    this.onPageSelected,
+    required this.itemCount,
+    required this.onPageSelected,
     this.color: Colors.white,
   }) : super(listenable: controller);
 

@@ -3,8 +3,8 @@ import 'package:tradly_grocery_app/data/model/error_response.dart';
 
 class BaseErrorResponse implements BaseJson{
 
-  ErrorResponse _errorResponse;
-  int _timeStamp;
+  late ErrorResponse _errorResponse;
+  late int _timeStamp;
 
   BaseErrorResponse.fromJson(Map<String, dynamic> json){
     this.fromJson(json);

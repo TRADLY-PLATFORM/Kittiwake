@@ -4,10 +4,10 @@ import 'package:tradly_grocery_app/presentation/utils/app_colors.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_text_style.dart';
 
 class OnBoardingContent extends StatelessWidget {
-  final String _assetName;
-  final String _title;
+  late final String _assetName;
+  late final String _title;
 
-  OnBoardingContent({@required String assetName, @required String title})
+  OnBoardingContent({required String assetName,required String title})
       : this._assetName = assetName,
         this._title = title;
 
@@ -38,7 +38,7 @@ class OnBoardingContent extends StatelessWidget {
                 padding: EdgeInsets.only(top: 48.0),
                 child: Text(
                   this._title,
-                  style: getStyleTitle(context).copyWith(
+                  style: getStyleTitle(context)?.copyWith(
                     color: AppColors.PURE_BLACK,
                   ),
                   textAlign: TextAlign.center,

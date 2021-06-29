@@ -5,11 +5,11 @@ import 'package:tradly_grocery_app/presentation/utils/app_text_style.dart';
 
 class AppAlertDialog {
   static void showAlertDialog(
-      {@required BuildContext context,
-      @required String message,
+      {required BuildContext context,
+      required String message,
       String title = 'Alert',
       String positiveTitle = 'OK',
-      VoidCallback onPressed}) {
+      VoidCallback? onPressed}) {
     showDialog(
         barrierDismissible: false,
         context: context,
@@ -17,12 +17,12 @@ class AppAlertDialog {
               backgroundColor: Colors.white,
               title: Text(
                 title,
-                style: getStyleTitle(context).copyWith(
+                style: getStyleTitle(context)?.copyWith(
                     color: Colors.black, fontWeight: AppFont.fontWeightBold),
               ),
               content: Text(
                 message,
-                style: getStyleSubHeading(context).copyWith(
+                style: getStyleSubHeading(context)?.copyWith(
                     color: Colors.black, fontWeight: AppFont.fontWeightRegular),
               ),
               actions: <Widget>[
@@ -33,7 +33,7 @@ class AppAlertDialog {
                     },
                     child: Text(
                       positiveTitle,
-                      style: getStyleSubHeading(context).copyWith(
+                      style: getStyleSubHeading(context)?.copyWith(
                           color: AppColors.PURE_BLACK,
                           fontWeight: AppFont.fontWeightBold),
                     ))

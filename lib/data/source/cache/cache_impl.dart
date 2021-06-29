@@ -4,7 +4,7 @@ import 'cache.dart';
 
 class CacheImpl implements Cache{
 
-  UserEntity _userEntity;
+  late UserEntity _userEntity;
 
   @override
   void clearUserEntity() {
