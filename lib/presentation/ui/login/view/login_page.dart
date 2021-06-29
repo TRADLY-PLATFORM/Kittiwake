@@ -158,8 +158,7 @@ class LoginPage extends StatelessWidget {
                                   this._buildSnackbar(buildContext, model.response.message);
                                 } else if (Status.SUCCESS == model.response.status) {
                                   if (model.response.data) {
-                                    Navigator.pushNamedAndRemoveUntil(
-                                      context, MainPage.ROUTE_NAME, (_) => false);
+                                    Navigator.pushReplacementNamed(context, MainPage.ROUTE_NAME);
                                   }
                                 }
                               }

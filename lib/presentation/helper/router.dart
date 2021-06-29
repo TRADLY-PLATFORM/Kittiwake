@@ -17,8 +17,8 @@ class AppRouter {
         return _buildPageRoute(LoginPage(), settings);
       case MainPage.ROUTE_NAME:
         return _buildPageRoute(MainPage(), settings);
-      case Onboarding.ROUTE_NAME:
-        return _buildPageRoute(Onboarding(), settings);
+      case OnboardingPage.ROUTE_NAME:
+        return _buildPageRoute(OnboardingPage(), settings);
       default:
         return CupertinoPageRoute(builder: (_) => Container());
     }
@@ -29,5 +29,5 @@ class AppRouter {
     return MaterialPageRoute(builder: (_) => widget, settings: settings);
   }
 
-  static String get initialRoute => LoginPage.ROUTE_NAME;
+  static String get initialRoute => OnboardingPage.ROUTE_NAME;
 }

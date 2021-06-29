@@ -19,16 +19,14 @@ class FetchDataException extends AppException {
       : super(message, 'Error During Communication: ');
 }
 
-class TradlyException implements Exception{
+class TradlyException extends AppException{
 
-  final BaseErrorResponse baseErrorResponse;
-
-  TradlyException(this.baseErrorResponse);
+  TradlyException(BaseErrorResponse baseErrorResponse):
+        super('Error Code: ${baseErrorResponse.errorResponse.code}',
+          '\nMessage: ${baseErrorResponse.errorResponse.message}');
 
   String toString() {
-    final error = this.baseErrorResponse.errorResponse;
-    final formattedError = 'Error Code: ${error.code} \nMessage: ${error.message}';
-    log.i(formattedError);
-    return formattedError;
+    log.i(super.toString());
+    return super.toString();
   }
 }

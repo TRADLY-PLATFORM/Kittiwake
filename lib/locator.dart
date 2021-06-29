@@ -13,6 +13,7 @@ import 'package:tradly_grocery_app/domain/usecase/login_use_case_impl.dart';
 import 'package:tradly_grocery_app/presentation/ui/home/home_view_model.dart';
 import 'package:tradly_grocery_app/presentation/ui/login/view_model/login_view_model.dart';
 import 'package:tradly_grocery_app/presentation/ui/main/main_view_model.dart';
+import 'package:tradly_grocery_app/presentation/ui/onboarding/onboarding_view_model.dart';
 
 GetIt locator = GetIt.instance;
 
@@ -32,6 +33,7 @@ void _setupLocator() {
   locator.registerFactory<LoginUseCase>(() => LoginUseCaseImpl(locator<Repository>()));
 
   //View Model
+  locator.registerFactory<OnBoardingViewModel>(() => OnBoardingViewModel());
   locator.registerFactory<LoginViewModel>(() => LoginViewModel(locator<LoginUseCase>()));
   locator.registerFactory<MainViewModel>(() => MainViewModel());
   locator.registerFactory<HomeViewModel>(() => HomeViewModel());
