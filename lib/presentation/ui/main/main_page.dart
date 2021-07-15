@@ -26,7 +26,7 @@ class MainPage extends StatelessWidget {
     return BaseView<MainViewModel>(
         builder: (buildContext, model, widget) =>
             Scaffold(
-              body: _getbody(model.currentNavigationIndex),
+              body: _getBody(model.currentNavigationIndex),
               bottomNavigationBar: BottomNavigationBar(
                 showUnselectedLabels: true,
                 backgroundColor: Colors.white,
@@ -49,7 +49,7 @@ class MainPage extends StatelessWidget {
             ));
   }
 
-  Widget _getbody(int index){
+  Widget _getBody(int index){
     switch(Navigation.values[index]){
       case Navigation.HOME:
         return HomePage();

@@ -8,8 +8,7 @@ void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     // For Android.
     // Use [light] for white status bar and [dark] for black status bar.
-    systemNavigationBarIconBrightness: Brightness.light,
-    statusBarIconBrightness: Brightness.dark,
+    statusBarIconBrightness: Brightness.light,
     // For iOS.
     // Use [dark] for white status bar and [light] for black status bar.
     statusBarBrightness: Brightness.dark,

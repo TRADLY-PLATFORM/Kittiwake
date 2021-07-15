@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_font.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_text_style.dart';
-import 'package:tradly_grocery_app/presentation/widget/app_bar_search_item.dart';
 
 class ProfilePage extends StatelessWidget {
 

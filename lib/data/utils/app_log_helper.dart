@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+//import 'package:flutter/foundation.dart';
 import 'package:logger/logger.dart';
 
 //get logger
@@ -17,14 +17,14 @@ class AppLogHelper extends PrettyPrinter {
     var color = PrettyPrinter.levelColors[event.level];
     var emoji = PrettyPrinter.levelEmojis[event.level];
     List<String> logs = [];
-    if (bool.fromEnvironment('PRODUCTION', defaultValue: true) && color !=null) {
+    //if (bool.fromEnvironment('PRODUCTION', defaultValue: true) && color !=null) {
       //have to check is in debug mode or production mode to disable the og or not
       logs.add(
           '==========================================================================');
-      logs.add((color('[ $emoji $className - ${event.message} ]')));
+      logs.add((color!('[ $emoji $className - ${event.message} ]')));
       logs.add(
           '==========================================================================');
-    }
+    //}
     return logs;
   }
 }
