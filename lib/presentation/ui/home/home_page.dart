@@ -1,12 +1,15 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:tradly_grocery_app/presentation/ui/home/product_list_view.dart';
+import 'package:tradly_grocery_app/presentation/ui/model/product.dart';
+import 'package:tradly_grocery_app/presentation/utils/app_colors.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_constants.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_font.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_text_style.dart';
 import 'package:tradly_grocery_app/presentation/widget/app_bar_search_item.dart';
+import 'package:tradly_grocery_app/presentation/ui/home/product_view.dart';
 
 class HomePage extends StatelessWidget {
-
   final List<MaterialColor> list = [
     Colors.orange,
     Colors.blue,
@@ -21,6 +24,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.LIGHT_BLUE,
         appBar: AppBar(
             centerTitle: false,
             brightness: Brightness.dark,
@@ -73,8 +77,23 @@ class HomePage extends StatelessWidget {
                         child: Center(),
                         color: list[index],
                       )),
-            )
+            ),
+            ProductListView(name: "New Product",products: List.generate(10, (index) => Product(
+                image: "https://picsum.photos/200",
+                name: "Orange",
+                storeImage:
+                "https://picsum.photos/200",
+                storeName: "Tradly",
+                price: "\$20"))),
+            ProductListView(name: "Popular Product",products: List.generate(10, (index) => Product(
+                image: "https://picsum.photos/200",
+                name: "Apple",
+                storeImage:
+                "https://picsum.photos/200",
+                storeName: "MN Store",
+                price: "\$100")))
           ]),
+
         ));
   }
 }
