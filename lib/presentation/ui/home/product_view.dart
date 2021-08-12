@@ -18,6 +18,7 @@ class ProductView extends StatelessWidget {
       elevation: 4.0,
       child: SizedBox(
         width: 180,
+        height: 230,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -45,7 +46,7 @@ class ProductView extends StatelessWidget {
                       children: [
                         ClipRRect(
                           child: Image.network(
-                            this._product.storeImage,
+                            this._product.store.image,
                             width: 30.0,
                             height: 30.0,
                             fit: BoxFit.fill,
@@ -56,7 +57,7 @@ class ProductView extends StatelessWidget {
                           child: Padding(
                               padding: EdgeInsets.only(left: 6.0),
                               child: Text(
-                                this._product.storeName,
+                                this._product.store.name,
                                 overflow: TextOverflow.ellipsis,
                                 style: getStyleSubHeading(context)?.copyWith(
                                     color: AppColors.SILVER,
