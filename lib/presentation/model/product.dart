@@ -1,4 +1,4 @@
-import 'package:tradly_grocery_app/presentation/ui/model/store.dart';
+import 'package:tradly_grocery_app/presentation/model/store.dart';
 
 class Product {
   final String image;

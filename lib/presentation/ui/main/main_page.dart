@@ -10,7 +10,6 @@ import 'package:tradly_grocery_app/presentation/utils/app_colors.dart';
 import 'package:tradly_grocery_app/presentation/view_model/base_view.dart';
 
 class MainPage extends StatelessWidget {
-
   static const ROUTE_NAME = '/main';
 
   final Map<String, IconData> navigationItems = {
@@ -24,8 +23,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseView<MainViewModel>(
-        builder: (buildContext, model, widget) =>
-            Scaffold(
+        builder: (buildContext, model, widget) => Scaffold(
               body: _getBody(model.currentNavigationIndex),
               bottomNavigationBar: BottomNavigationBar(
                 showUnselectedLabels: true,
@@ -36,21 +34,25 @@ class MainPage extends StatelessWidget {
                 currentIndex: model.currentNavigationIndex,
                 elevation: 4.0,
                 type: BottomNavigationBarType.fixed,
-                onTap: (index){
+                onTap: (index) {
                   model.currentNavigationIndex = index;
                 },
-                items: this.navigationItems.entries.map((pair) =>
-                    BottomNavigationBarItem(
+                items: this
+                    .navigationItems
+                    .entries
+                    .map((pair) => BottomNavigationBarItem(
                         icon: Padding(
-                          padding: const EdgeInsets.only(top:4.0,bottom: 6.0),
+                          padding: const EdgeInsets.only(top: 4.0, bottom: 6.0),
                           child: Icon(pair.value),
-                        ), label: pair.key)).toList(),
+                        ),
+                        label: pair.key))
+                    .toList(),
               ),
             ));
   }
 
-  Widget _getBody(int index){
-    switch(Navigation.values[index]){
+  Widget _getBody(int index) {
+    switch (Navigation.values[index]) {
       case Navigation.HOME:
         return HomePage();
       case Navigation.BROWSE:
@@ -61,6 +63,6 @@ class MainPage extends StatelessWidget {
         return OrderHistoryPage();
       case Navigation.PROFILE:
         return ProfilePage();
-    }
+    };
   }
 }

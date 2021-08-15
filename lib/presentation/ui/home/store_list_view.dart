@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_grocery_app/presentation/ui/home/store_view.dart';
-import 'package:tradly_grocery_app/presentation/ui/model/store.dart';
+import 'package:tradly_grocery_app/presentation/model/store.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_colors.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_font.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_text_style.dart';

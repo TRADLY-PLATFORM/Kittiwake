@@ -1,9 +1,10 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:tradly_grocery_app/presentation/model/banner_item.dart';
+import 'package:tradly_grocery_app/presentation/ui/home/banner_carousel_slider.dart';
 import 'package:tradly_grocery_app/presentation/ui/home/product_list_view.dart';
 import 'package:tradly_grocery_app/presentation/ui/home/store_list_view.dart';
-import 'package:tradly_grocery_app/presentation/ui/model/product.dart';
-import 'package:tradly_grocery_app/presentation/ui/model/store.dart';
+import 'package:tradly_grocery_app/presentation/model/product.dart';
+import 'package:tradly_grocery_app/presentation/model/store.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_colors.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_constants.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_font.dart';
@@ -35,29 +36,8 @@ class HomePage extends StatelessWidget {
                 height: kToolbarHeight + 16.0)),
         body: SingleChildScrollView(
           child: Column(children: [
-            Padding(
-              padding: EdgeInsets.only(top: 16.0),
-              child: CarouselSlider.builder(
-                  options: CarouselOptions(
-                    aspectRatio: 2.0,
-                    enableInfiniteScroll: false,
-                    viewportFraction: 0.92,
-                  ),
-                  itemCount: 6,
-                  itemBuilder: (context,index,realIndex)=> Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                    elevation: 4.0,
-                    margin: EdgeInsets.only(right: 16.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                      child: Image.network("https://picsum.photos/800/${250+index}",
-                           fit: BoxFit.cover),
-                    ),
-                  ),
-            )
-            ),
+            BannerCarouselSlider(banners: List.generate(6,
+                    (index) => BannerItem(image: "https://picsum.photos/800/${250+index}"))),
             Padding(
               padding: EdgeInsets.only(top: 16.0),
               child: GridView.builder(

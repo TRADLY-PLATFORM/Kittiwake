@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tradly_grocery_app/presentation/ui/home/product_view.dart';
-import 'package:tradly_grocery_app/presentation/ui/model/product.dart';
+import 'package:tradly_grocery_app/presentation/model/product.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_font.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_text_style.dart';
 
