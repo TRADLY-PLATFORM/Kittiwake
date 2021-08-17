@@ -11,7 +11,7 @@ class AppBarSearchItem extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 16.0, left: 8.0, right: 8.0),
+      padding: EdgeInsets.only(bottom: 10.0, left: 8.0, right: 8.0),
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25.0),
