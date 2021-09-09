@@ -8,7 +8,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/TRADLY-PLATFORM/Kittiwake">
-    <img src="./src/assets/images/logo.svg" alt="Logo" width="80" height="80">
+    <img src="https://avatars.githubusercontent.com/u/64465296?s=200&v=4" alt="Logo" width="80" height="80">
   </a>
  
   <h3 align="center">Tradly Platform</h3>
@@ -88,29 +88,29 @@ _Documentation yet to be added_
 ### Folder Structure
 Here is the core folder structure which flutter provides.
 tradly_grocery_app/ 
-|- android 
-|- build 
-|- ios 
-|- lib 
-|- test
+- android 
+- build 
+- ios 
+- lib 
+- test
 
 Here is the folder structure we have been using in this project
 lib/
-|- data
-|- domain
-|- presentation
+- data
+- domain
+- presentation
 
 
 ## Data Layer
 Data Layer contains Repository Implementations and 1 or multiple Data Sources. Repositories are responsible to coordinate data from the different Data Sources. Data Layer depends on Domain Layer.
 
 data/
-|- entities
-|- model
-|- repo
-|- source
-|- store
-|- utils
+- entities
+- model
+- repo
+- source
+- store
+- utils
 
 
 ### Entites
@@ -136,10 +136,10 @@ Utils consists of constants which are used in data layer and helper classes.
 Domain Layer is the most INNER part of the onion (no dependencies with other layers) and it contains Entities, Use cases & Repository Interfaces. Use cases combine data from 1 or multiple Repository Interfaces.
 
 domain/
-|- model
-|- repo
-|- usecase
-|- utils
+- model
+- repo
+- usecase
+- utils
 
 
 
@@ -147,15 +147,12 @@ domain/
 Presentation Layer contains UI (Widgets) that are coordinated by Presenters/ViewModels which execute 1 or multiple Use cases. Presentation Layer depends on Domain Layer.
 
 presentation
-|- helper
-|- model
-|- ui
-|- utils
-|- view_model
-|- widget
-
-
-
+- helper
+- model
+- ui
+- utils
+- view_model
+- widget
 
 
 <!-- USAGE EXAMPLES -->
