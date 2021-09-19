@@ -61,7 +61,10 @@
 ## About The Project
 Kittiwake is a Flutter based storefront kit developed on top of Tradly API. It comes with automated CI/CD, testing, etc. You can launch a B2C, D2C e-commerce apps using this kit. You need the tenantID or Publishable API Key to test your app. Signup for a free sandbox account at Tradly.app and experiment the app. 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
- 
+![Snip20210920_28](https://user-images.githubusercontent.com/61427976/133941010-415c4d46-6bf0-451d-bdcc-d967c68d1121.png)
+![Snip20210920_29](https://user-images.githubusercontent.com/61427976/133941016-74795da8-a06c-461c-8cce-149ac2578d01.png)
+![Snip20210920_30](https://user-images.githubusercontent.com/61427976/133941019-ee15f282-86a7-45f8-87b8-1fcd9cad6bbb.png)
+
 
 ### Built With
 * Flutter
