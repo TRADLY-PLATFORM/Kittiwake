@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:tradly_grocery_app/domain/model/response.dart';
+import 'package:tradly_grocery_app/domain/model/params_login.dart';
 import 'package:tradly_grocery_app/domain/usecase/login_use_case.dart';
 import 'package:tradly_grocery_app/locator.dart';
 
@@ -9,9 +9,10 @@ void main(){
   group('Tradly Grocery Flow', () {
     test('Login SHOULD Pass THEN RETURN true', () async {
       final loginUseCase = locator<LoginUseCase>();
-      final loginResponse = await loginUseCase.login('', 'mthahaseen@gmail.com', '12345678');
-      expect(loginResponse.status, Status.SUCCESS);
-      expect(loginResponse.data, true);
+      final paramsLogin = ParamsLogin(uuid: '', email: 'mthahaseen@gmail.com', password: '12345678');
+      final loginResponse = await loginUseCase.execute(paramsLogin);
+      expect(loginResponse.isRight, true);
+      expect(loginResponse.right, true);
     });
   });
 }
