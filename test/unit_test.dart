@@ -12,8 +12,8 @@ void main() {
       final paramsLogin = ParamsLogin(
           uuid: '', email: 'mthahaseen@gmail.com', password: '12345678');
       final loginResponse = await loginUseCase.execute(paramsLogin);
-      expect(loginResponse.isLeft, true);
-      expect(loginResponse.left, true);
+      expect(loginResponse.isSuccess, true);
+      expect(loginResponse.successData, true);
     });
   });
 }

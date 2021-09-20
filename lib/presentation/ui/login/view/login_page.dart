@@ -162,7 +162,7 @@ class LoginPage extends StatelessWidget {
                                         "",
                                         this._usernameController.text,
                                         this._passwordController.text);
-                                    model.loginResponse.fold((success) {
+                                    model.loginResponse.receive((success) {
                                       if (success) {
                                         Navigator.pushReplacementNamed(
                                             context, MainPage.ROUTE_NAME);

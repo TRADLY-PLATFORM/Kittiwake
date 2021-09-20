@@ -1,5 +1,5 @@
-import 'package:either_dart/either.dart';
+import 'package:tradly_grocery_app/domain/model/response.dart';
 
 abstract class UseCase<T,P> {
-  Future<Either<T,String>> execute(P params);
+  Future<Response<T>> execute(P params);
 }
