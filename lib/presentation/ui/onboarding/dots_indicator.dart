@@ -9,7 +9,7 @@ class DotsIndicator extends AnimatedWidget {
     this.controller,
     required this.itemCount,
     required this.onPageSelected,
-    this.color: Colors.white,
+    this.color = Colors.white,
   }) : super(listenable: controller);
 
   /// The PageController that this DotsIndicator is representing.
@@ -43,16 +43,16 @@ class DotsIndicator extends AnimatedWidget {
       ),
     );
     double zoom = 1.0 + (_kMaxZoom - 1.0) * selectedness;
-    return new Container(
+    return Container(
       width: _kDotSpacing,
-      child: new Center(
-        child: new Material(
+      child: Center(
+        child: Material(
           color: controller.page == index ? AppColors.PURE_BLACK : color,
           type: MaterialType.circle,
-          child: new Container(
+          child: Container(
             width: _kDotSize * zoom,
             height: _kDotSize * zoom,
-            child: new InkWell(
+            child: InkWell(
               onTap: () => onPageSelected(index),
             ),
           ),
@@ -61,10 +61,11 @@ class DotsIndicator extends AnimatedWidget {
     );
   }
 
+  @override
   Widget build(BuildContext context) {
-    return new Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: new List<Widget>.generate(itemCount, _buildDot),
+      children: List<Widget>.generate(itemCount, _buildDot),
     );
   }
 }

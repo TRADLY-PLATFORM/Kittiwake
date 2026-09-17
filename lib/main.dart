@@ -5,13 +5,15 @@ import 'package:tradly_grocery_app/locator.dart';
 import 'app.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await SentryFlutter.init(
-        (options) {
-      options.dsn = 'https://b3598089ccc74b5887130e9bcb24fe62@o396771.ingest.sentry.io/5906572';
+    (options) {
+      options.dsn =
+          const String.fromEnvironment('SENTRY_DSN', defaultValue: '');
+      options.tracesSampleRate = 1.0;
     },
     appRunner: () {
-      WidgetsFlutterBinding.ensureInitialized();
-      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
         // For Android.
         // Use [light] for white status bar and [dark] for black status bar.
         statusBarIconBrightness: Brightness.light,
@@ -24,7 +26,7 @@ Future<void> main() async {
       ]);
       setUpRealLocator();
       //setupMockLocator();
-      runApp(App());
-      }
+      runApp(const App());
+    },
   );
 }

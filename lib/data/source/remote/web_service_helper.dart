@@ -21,7 +21,7 @@ abstract class WebServiceHelper {
 
   final JsonDecoder _decoder = JsonDecoder();
 
-  Map<String, String> _headers = {
+  final Map<String, String> _headers = {
     HttpHeaders.acceptHeader: 'application/json',
     HttpHeaders.contentTypeHeader: 'application/json',
     DataConstants.AUTHORIZATION_KEY: DataConstants.AUTHORIZATION_VALUE,
@@ -95,7 +95,7 @@ abstract class WebServiceHelper {
           throw TradlyException(errorResponse);
         } catch(e) {
           if(e is TradlyException){
-            throw e;
+            rethrow;
           }
           throw AppException(
               'Error occurred while Communication with Server with StatusCode : ${response

@@ -9,6 +9,7 @@ class AppException implements Exception {
 
   AppException([this._message, this._prefix]);
 
+  @override
   String toString() {
     return "$_prefix$_message";
   }
@@ -25,6 +26,7 @@ class TradlyException extends AppException{
 
   TradlyException(this._baseErrorResponse);
 
+  @override
   String toString() {
     final error = this._baseErrorResponse.errorResponse;
     final formattedError = "Error Code: ${error.code} \nMessage: ${error.message}";

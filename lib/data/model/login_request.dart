@@ -8,7 +8,7 @@ class LoginRequest implements MapRequest {
 
   @override
   Map<String, dynamic> toMap() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['user'] = this.userRequest.toMap();
     return data;
   }

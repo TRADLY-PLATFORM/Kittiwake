@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tradly_grocery_app/presentation/model/banner_item.dart';
 import 'package:tradly_grocery_app/presentation/ui/home/banner_carousel_slider.dart';
 import 'package:tradly_grocery_app/presentation/ui/home/product_list_view.dart';
@@ -19,7 +20,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: AppColors.LIGHT_BLUE,
         appBar: AppBar(
             centerTitle: false,
-            brightness: Brightness.dark,
+            systemOverlayStyle: SystemUiOverlayStyle.light,
             iconTheme: IconThemeData(color: Colors.white),
             title: Text(
               AppConstants.GROCERIES,

@@ -1,4 +1,3 @@
-import 'package:either_dart/either.dart';
 import 'package:flutter/material.dart';
 import 'package:tradly_grocery_app/presentation/ui/login/view_model/login_view_model.dart';
 import 'package:tradly_grocery_app/presentation/ui/main/main_page.dart';
@@ -220,15 +219,5 @@ class LoginPage extends StatelessWidget {
     ScaffoldMessenger.of(context)
       ..removeCurrentSnackBar(reason: SnackBarClosedReason.dismiss)
       ..showSnackBar(snackBar);
-  }
-
-  Widget _call<T>(
-      {required Either<T, String>? response,
-      required Widget Function() onInitial,
-      required Widget Function(T) onSuccess,
-      required Widget Function(String) onFailure}) {
-    return response?.fold(
-            (response) => onSuccess(response), (error) => onFailure(error)) ??
-        onInitial();
   }
 }

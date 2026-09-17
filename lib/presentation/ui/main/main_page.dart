@@ -63,6 +63,6 @@ class MainPage extends StatelessWidget {
         return OrderHistoryPage();
       case Navigation.PROFILE:
         return ProfilePage();
-    };
+    }
   }
 }

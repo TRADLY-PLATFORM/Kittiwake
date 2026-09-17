@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:tradly_grocery_app/presentation/ui/home/product_view.dart';
 import 'package:tradly_grocery_app/presentation/model/product.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_font.dart';
@@ -33,11 +32,11 @@ class ProductListView extends StatelessWidget {
                         fontWeight: AppFont.fontWeightRegular),
                   ),
                   style: ButtonStyle(
-                      padding: MaterialStateProperty.all(
+                      padding: WidgetStateProperty.all(
                           EdgeInsets.symmetric(horizontal: 24.0)),
                       backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.black),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          WidgetStateProperty.all<Color>(Colors.black),
+                      shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
                         side: BorderSide(color: Colors.black),

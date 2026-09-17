@@ -1,5 +1,3 @@
-library modal_progress_hud;
-
 import 'package:flutter/material.dart';
 
 ///
@@ -32,7 +30,7 @@ class ModalProgressHUD extends StatelessWidget {
   final Widget child;
 
   ModalProgressHUD({
-    Key? key,
+    super.key,
     required this.inAsyncCall,
     this.opacity = 0.3,
     this.color = Colors.grey,
@@ -40,9 +38,7 @@ class ModalProgressHUD extends StatelessWidget {
     this.offset,
     this.dismissible = false,
     required this.child,
-  })  : assert(child != null),
-        assert(inAsyncCall != null),
-        super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -50,13 +46,14 @@ class ModalProgressHUD extends StatelessWidget {
     widgetList.add(child);
     if (inAsyncCall) {
       Widget layOutProgressIndicator;
-      if (offset == null)
+      final currentOffset = offset;
+      if (currentOffset == null) {
         layOutProgressIndicator = Center(child: progressIndicator);
-      else {
+      } else {
         layOutProgressIndicator = Positioned(
           child: progressIndicator,
-          left: offset?.dx,
-          top: offset?.dy,
+          left: currentOffset.dx,
+          top: currentOffset.dy,
         );
       }
       final modal = [

@@ -11,7 +11,7 @@ class UserRequest implements MapRequest {
 
   @override
   Map<String, dynamic> toMap() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['uuid'] = this.uuid;
     data['email'] = this.email;
     data['password'] = this.password;

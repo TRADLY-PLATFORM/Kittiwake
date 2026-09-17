@@ -20,7 +20,10 @@ class AppRouter {
       case OnboardingPage.ROUTE_NAME:
         return _buildPageRoute(OnboardingPage(), settings);
       default:
-        return CupertinoPageRoute(builder: (_) => Container());
+        return CupertinoPageRoute(
+            builder: (_) => const Scaffold(
+                  body: Center(child: Text('Route not found')),
+                ));
     }
   }
 

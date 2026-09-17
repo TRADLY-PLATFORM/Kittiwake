@@ -3,68 +3,82 @@ import 'package:tradly_grocery_app/presentation/utils/app_colors.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_font.dart';
 
 //default style
-TextStyle? getStyleButton(context) => Theme.of(context).textTheme.button;
+TextStyle? getStyleButton(BuildContext context) =>
+    Theme.of(context).textTheme.labelLarge;
 
-TextStyle? getStyleOverLine(context) => Theme.of(context).textTheme.overline;
+TextStyle? getStyleOverLine(BuildContext context) =>
+    Theme.of(context).textTheme.labelSmall;
 
-TextStyle? getStyleCaption(context) => Theme.of(context).textTheme.caption;
+TextStyle? getStyleCaption(BuildContext context) =>
+    Theme.of(context).textTheme.bodySmall;
 
-TextStyle? getStyleBody1(context) => Theme.of(context).textTheme.bodyText2;
+TextStyle? getStyleBody1(BuildContext context) =>
+    Theme.of(context).textTheme.bodyMedium;
 
-TextStyle? getStyleBody2(context) => Theme.of(context).textTheme.bodyText1;
+TextStyle? getStyleBody2(BuildContext context) =>
+    Theme.of(context).textTheme.bodyLarge;
 
-TextStyle? getStyleSubHeading(context) => Theme.of(context).textTheme.subtitle1;
+TextStyle? getStyleSubHeading(BuildContext context) =>
+    Theme.of(context).textTheme.titleMedium;
 
-TextStyle? getStyleSubTitle(context) => Theme.of(context).textTheme.subtitle2;
+TextStyle? getStyleSubTitle(BuildContext context) =>
+    Theme.of(context).textTheme.titleSmall;
 
-TextStyle? getStyleTitle(context) => Theme.of(context).textTheme.headline6;
+TextStyle? getStyleTitle(BuildContext context) =>
+    Theme.of(context).textTheme.titleLarge;
 
-TextStyle? getStyleHeading(context) => Theme.of(context).textTheme.headline5;
+TextStyle? getStyleHeading(BuildContext context) =>
+    Theme.of(context).textTheme.headlineSmall;
 
-TextStyle? getStyleDisplay1(context) => Theme.of(context).textTheme.headline4;
+TextStyle? getStyleDisplay1(BuildContext context) =>
+    Theme.of(context).textTheme.headlineMedium;
 
-TextStyle? getStyleDisplay2(context) => Theme.of(context).textTheme.headline3;
+TextStyle? getStyleDisplay2(BuildContext context) =>
+    Theme.of(context).textTheme.headlineLarge;
 
-TextStyle? getStyleDisplay3(context) => Theme.of(context).textTheme.headline2;
+TextStyle? getStyleDisplay3(BuildContext context) =>
+    Theme.of(context).textTheme.displaySmall;
 
 //style : app form style
-TextStyle? getAppButtonStyle(context) => getStyleSubTitle(context)?.copyWith(
-  color: AppColors.NATIVE_GREEN,
-  fontWeight: AppFont.fontWeightSemiBold,
-);
+TextStyle? getAppButtonStyle(BuildContext context) =>
+    getStyleSubTitle(context)?.copyWith(
+      color: AppColors.NATIVE_GREEN,
+      fontWeight: AppFont.fontWeightSemiBold,
+    );
 
 //style: app backdrop title style
-TextStyle? getAppBackDropTitleStyle(context) =>
+TextStyle? getAppBackDropTitleStyle(BuildContext context) =>
     getStyleHeading(context)?.copyWith(
       color: AppColors.NATIVE_GREEN,
       fontWeight: AppFont.fontWeightRegular,
     );
 
 //style : app button text style
-TextStyle? getStyleButtonText(context) =>
+TextStyle? getStyleButtonText(BuildContext context) =>
     getStyleSubHeading(context)?.copyWith(
         color: AppColors.NATIVE_GREEN, fontWeight: AppFont.fontWeightSemiBold);
 
 //style : app button text style
-TextStyle? getStyleForSmallText(context) =>
-    getStyleBody1(context)?.copyWith(color: AppColors.NATIVE_GREEN, fontWeight: AppFont.fontWeightLight);
+TextStyle? getStyleForSmallText(BuildContext context) => getStyleBody1(context)
+    ?.copyWith(
+        color: AppColors.NATIVE_GREEN, fontWeight: AppFont.fontWeightLight);
 
-TextStyle? getStyleForSubHeadSemiBoldText(context) =>
+TextStyle? getStyleForSubHeadSemiBoldText(BuildContext context) =>
     getStyleSubHeading(context)?.copyWith(
         color: AppColors.NATIVE_GREEN, fontWeight: AppFont.fontWeightSemiBold);
 
-TextStyle? getStyleForTitleBoldText(context) =>
+TextStyle? getStyleForTitleBoldText(BuildContext context) =>
     getStyleSubTitle(context)?.copyWith(
         color: AppColors.NATIVE_GREEN, fontWeight: AppFont.fontWeightBold);
 
-TextStyle? getStyleForHeadingBoldText(context) =>
+TextStyle? getStyleForHeadingBoldText(BuildContext context) =>
     getStyleHeading(context)?.copyWith(
         color: AppColors.NATIVE_GREEN, fontWeight: AppFont.fontWeightBold);
 
-TextStyle? getStyleForDisplay1BoldText(context) =>
+TextStyle? getStyleForDisplay1BoldText(BuildContext context) =>
     getStyleDisplay1(context)?.copyWith(
         color: AppColors.NATIVE_GREEN, fontWeight: AppFont.fontWeightBold);
 
-TextStyle? getStyleForHeadingMediumText(context) =>
+TextStyle? getStyleForHeadingMediumText(BuildContext context) =>
     getStyleHeading(context)?.copyWith(
         color: AppColors.NATIVE_GREEN, fontWeight: AppFont.fontWeightMedium);

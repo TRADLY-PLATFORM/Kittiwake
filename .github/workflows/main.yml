@@ -1,23 +1,45 @@
-name: Tradly Groceries work flow
-on: [push]
+name: Tradly Groceries workflow
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
 jobs:
-  run:
-    name: Run
-    env: # Or as an environment variable
-      host_name: ${{ secrets.HOST_NAME }}
+  analyze-test:
+    name: Analyze + Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-java@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
         with:
-          java-version: '12.x'
-      - uses: subosito/flutter-action@v1
+          distribution: temurin
+          java-version: '17'
+      - uses: subosito/flutter-action@v2
         with:
-          channel: 'stable' # or: 'dev' or 'beta'
+          channel: stable
+          cache: true
       - run: flutter pub get
+      - run: flutter analyze --no-fatal-infos
       - run: flutter test
-      - run: flutter build apk
-      - uses: actions/upload-artifact@v1
+      - run: flutter pub outdated
+
+  build-android:
+    name: Build APK
+    needs: analyze-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
         with:
-          name: app
-          path: build/app/outputs/apk/release/app-release.apk
+          distribution: temurin
+          java-version: '17'
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter build apk --release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-release
+          path: build/app/outputs/flutter-apk/app-release.apk

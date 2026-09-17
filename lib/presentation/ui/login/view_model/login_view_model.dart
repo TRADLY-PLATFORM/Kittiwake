@@ -1,4 +1,3 @@
-import 'package:either_dart/either.dart';
 import 'package:tradly_grocery_app/domain/model/params_login.dart';
 import 'package:tradly_grocery_app/domain/model/response.dart';
 import 'package:tradly_grocery_app/domain/usecase/use_case.dart';
@@ -15,7 +14,7 @@ class LoginViewModel extends BaseViewModel{
 
   Response<bool> get loginResponse => _loginResponse;
 
-  Future login(final String uuid,final String email,final password) async {
+  Future<void> login(final String uuid, final String email, final String password) async {
     setState(ViewState.Busy);
     final paramsLogin = ParamsLogin(uuid: uuid, email: email, password: password);
     this._loginResponse = await this._loginUseCase.execute(paramsLogin);

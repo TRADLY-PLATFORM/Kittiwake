@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tradly_grocery_app/presentation/model/product.dart';
 import 'package:tradly_grocery_app/presentation/model/store.dart';
 import 'package:tradly_grocery_app/presentation/ui/home/product_view.dart';
@@ -13,7 +14,7 @@ class BrowsePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           centerTitle: false,
-          brightness: Brightness.dark,
+          systemOverlayStyle: SystemUiOverlayStyle.light,
           iconTheme: IconThemeData(color: Colors.white),
           title: Text(
             'Browse',

@@ -5,35 +5,38 @@ import 'package:tradly_grocery_app/presentation/utils/app_constants.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_font.dart';
 
 class App extends StatelessWidget {
+  const App({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: AppConstants.TRADLY_GROCERY,
       theme: ThemeData(
+        useMaterial3: true,
         fontFamily: AppFont.fontFamilyName,
-        textTheme: TextTheme(
-          button: TextStyle(fontWeight: AppFont.fontWeightRegular),
-          caption: TextStyle(fontWeight: AppFont.fontWeightRegular),
-          bodyText2: TextStyle(fontWeight: AppFont.fontWeightRegular),
-          bodyText1: TextStyle(fontWeight: AppFont.fontWeightRegular),
-          subtitle1: TextStyle(fontWeight: AppFont.fontWeightRegular),
-          headline6: TextStyle(fontWeight: AppFont.fontWeightRegular),
-          headline5: TextStyle(fontWeight: AppFont.fontWeightRegular),
-          headline4: TextStyle(fontWeight: AppFont.fontWeightRegular),
-          headline3: TextStyle(fontWeight: AppFont.fontWeightRegular),
-          headline2: TextStyle(fontWeight: AppFont.fontWeightRegular),
-          headline1: TextStyle(fontWeight: AppFont.fontWeightRegular),
-          overline: TextStyle(fontWeight: AppFont.fontWeightRegular),
-          subtitle2: TextStyle(fontWeight: AppFont.fontWeightRegular),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: AppColors.PURE_BLACK,
+          brightness: Brightness.light,
+        ),
+        textTheme: const TextTheme(
+          labelLarge: TextStyle(fontWeight: AppFont.fontWeightRegular),
+          bodySmall: TextStyle(fontWeight: AppFont.fontWeightRegular),
+          bodyMedium: TextStyle(fontWeight: AppFont.fontWeightRegular),
+          bodyLarge: TextStyle(fontWeight: AppFont.fontWeightRegular),
+          titleMedium: TextStyle(fontWeight: AppFont.fontWeightRegular),
+          titleLarge: TextStyle(fontWeight: AppFont.fontWeightRegular),
+          headlineSmall: TextStyle(fontWeight: AppFont.fontWeightRegular),
+          headlineMedium: TextStyle(fontWeight: AppFont.fontWeightRegular),
+          headlineLarge: TextStyle(fontWeight: AppFont.fontWeightRegular),
+          displaySmall: TextStyle(fontWeight: AppFont.fontWeightRegular),
+          displayMedium: TextStyle(fontWeight: AppFont.fontWeightRegular),
+          displayLarge: TextStyle(fontWeight: AppFont.fontWeightRegular),
+          labelSmall: TextStyle(fontWeight: AppFont.fontWeightRegular),
+          titleSmall: TextStyle(fontWeight: AppFont.fontWeightRegular),
         ),
         primaryColor: AppColors.PURE_BLACK,
-        accentColor: AppColors.PURE_BLACK,
-        buttonColor: AppColors.PURE_BLACK,
-        primaryColorBrightness: Brightness.light,
-        accentColorBrightness: Brightness.light,
-        brightness: Brightness.light,
-        textSelectionTheme: TextSelectionThemeData(cursorColor: AppColors.PURE_BLACK),
-        dialogBackgroundColor: Colors.transparent,
+        textSelectionTheme:
+            const TextSelectionThemeData(cursorColor: AppColors.PURE_BLACK),
+        dialogTheme: const DialogThemeData(backgroundColor: Colors.transparent),
       ),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRouter.generateRoute,

@@ -1,0 +1,20 @@
+analyzer:
+  exclude:
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+include: package:flutter_lints/flutter.yaml
+
+# Legacy codebase (2021-era): enforce errors/warnings, but don't fail
+# on style-only infos that would require touching 100+ lines.
+# New code should still follow flutter_lints; clean these up incrementally.
+linter:
+  rules:
+    unnecessary_this: false
+    constant_identifier_names: false
+    use_key_in_widget_constructors: false
+    prefer_const_constructors_in_immutables: false
+    unnecessary_new: false
+    sort_child_properties_last: false
+    sized_box_for_whitespace: false

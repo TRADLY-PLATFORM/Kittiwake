@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:tradly_grocery_app/presentation/ui/login/view/login_page.dart';
 import 'package:tradly_grocery_app/presentation/ui/onboarding/dots_indicator.dart';
 import 'package:tradly_grocery_app/presentation/ui/onboarding/onboarding_content.dart';
@@ -60,7 +59,7 @@ class OnboardingPage extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(top: 16.0,left: 24.0,right:24.0),
                             child: DotsIndicator(
-                              color: AppColors.PURE_BLACK.withAlpha(80),
+                              color: AppColors.PURE_BLACK.withValues(alpha: 80 / 255),
                               controller: _controller,
                               itemCount: 3,
                               onPageSelected: (value) {

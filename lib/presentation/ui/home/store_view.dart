@@ -61,11 +61,11 @@ class StoreView extends StatelessWidget {
                               fontWeight: AppFont.fontWeightRegular),
                         ),
                         style: ButtonStyle(
-                            padding: MaterialStateProperty.all(
+                            padding: WidgetStateProperty.all(
                                 EdgeInsets.symmetric(horizontal: 24.0)),
                             backgroundColor:
-                            MaterialStateProperty.all<Color>(Colors.black),
-                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                            WidgetStateProperty.all<Color>(Colors.black),
+                            shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(18.0),
                                   side: BorderSide(color: Colors.black),

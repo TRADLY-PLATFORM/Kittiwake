@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_font.dart';
 import 'package:tradly_grocery_app/presentation/utils/app_text_style.dart';
 
@@ -8,7 +9,7 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
         centerTitle: false,
-        brightness: Brightness.dark,
+        systemOverlayStyle: SystemUiOverlayStyle.light,
         iconTheme: IconThemeData(color: Colors.white),
         title: Text(
           'Profile',

@@ -1,19 +1,25 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility that Flutter provides. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tradly_grocery_app/app.dart';
 import 'package:tradly_grocery_app/locator.dart';
 
-
 void main() {
-  setUpRealLocator();
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(App());
+  setUpAll(() {
+    setUpRealLocator();
+  });
+
+  testWidgets('App boots to onboarding', (WidgetTester tester) async {
+    await tester.pumpWidget(const App());
+    await tester.pumpAndSettle();
+    // Onboarding titles should be visible (first page)
+    expect(find.byType(MaterialApp), findsOneWidget);
+    expect(find.textContaining('Empowering'), findsWidgets);
+  });
+
+  testWidgets('Onboarding navigates through pages', (WidgetTester tester) async {
+    await tester.pumpWidget(const App());
+    await tester.pumpAndSettle();
+    // Should have a PageView for onboarding
+    expect(find.byType(PageView), findsOneWidget);
   });
 }

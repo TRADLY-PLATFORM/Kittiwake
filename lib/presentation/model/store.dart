@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 class Store{
   final String name;
   final String image;
