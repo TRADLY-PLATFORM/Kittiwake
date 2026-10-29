@@ -34,7 +34,7 @@ dependencies:
   get_it: ^9.2.1
   photo_view: ^0.15.0
   carousel_slider: ^5.1.1
-  sentry_flutter: ^9.30.0
+  sentry_flutter: ^10.2.0
   either_dart: ^1.0.0
 
 dev_dependencies:
